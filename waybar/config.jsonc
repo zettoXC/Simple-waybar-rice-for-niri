@@ -1,0 +1,74 @@
+// -*- mode: jsonc -*-
+// vim: ft=jsonc
+// ============================================================
+//  WAYBAR CONFIG 
+// ============================================================
+{
+	"layer": "top",
+	"margin-top": 5,
+	"margin-right": 5,
+	"margin-left": 5,
+	"height": 30,
+
+	"modules-left": ["niri/workspaces"],
+	"modules-center": ["niri/window"],
+	"modules-right": ["network", "pulseaudio", "battery", "tray", "clock"],
+
+	"clock": {
+		"format": "{:%H:%M}",
+		"format-alt": "{:%Y-%m-%d}",
+		"locale": "fr_FR.utf8",
+		"calendar": false,
+		"tooltip": false
+	},
+
+	"tray": {
+			"icon-size": 21,
+			"spacing": 5,
+			"icons": {
+					"blueman": "bluetooth",
+					"TelegramDesktop": "$HOME/.local/share/icons/hicolor/16x16/apps/telegram.png"
+			}
+	},
+
+	"pulseaudio": {
+		"format": "{icon}",
+		"format-bluetooth": "{volume}% {icon} ",
+		"format-icons": ["󰕿", "󰖀", "󰕾"],
+		"tooltip-format": "{volume}%",
+		"format-muted": "󰖁",
+		"on-click": "blueman-manager"
+	},
+
+	"battery": {
+		"format": "{capacity}% {icon}",
+		"format-icons": ["", "", "", "", ""],
+		"states": {
+						"warning": 30,
+						"low": 20,
+						"critical": 10
+				}
+	},
+
+	"clock": {
+		"format-alt": "{:%a, %d. %b %H:%M}"
+	},	
+
+	"network": {
+		// config fallback
+		"interface": "wlp1s0",
+		"format": "{ifname}",
+		"tooltip-format": "{ifname} via {gwaddr} 󰊗",
+		"format-disconnected": "󰤮", //An empty format will hide the module.
+		"tooltip-format-disconnected": "Disconnected",
+		// Pour WiFi
+		"format-wifi": "{icon}",
+		"format-icons": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"],
+		"tooltip-format-wifi": "{essid} ({signalStrength}%)",
+		// Pour ethernet
+		"format-ethernet": "{ipaddr}/{cidr} 󰊗",
+		"tooltip-format-ethernet": "{ifname} ",
+
+		"max-length": 20
+	}
+}
