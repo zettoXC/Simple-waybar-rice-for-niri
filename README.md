@@ -11,3 +11,5 @@
 - battery
 - tray
 - clock
+
+⚠️ The "on-click" for the audio is using blueman-manager so it won't open if you didn't installed it.
