@@ -12,4 +12,9 @@
 - tray
 - clock
 
-⚠️ The "on-click" for the audio is using blueman-manager so it won't open if you didn't installed it.
+## Dependencies
+- The "on-click" for the audio is using blueman-manager so it won't open if you didn't installed it.
+- Workspaces are configured for niri
+- JetBrainsMono Nerd Font Propo must be installed
+
+I keep this repo to remember my first project and have it saved somwhere and maybe do a V2 in the future.
